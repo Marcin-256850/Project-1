@@ -8,27 +8,29 @@
 #include <ratio>
 using namespace std;
 
-void shellsort(int *d,int n)
-{	
+void shellsort(int *d,int N)
+{
 	int y,z,i,j;
-	  for(y=1;y<n;y=3*y+1) //obliczamy y dopóki nie przekroczy ilości elementów w tablicy
-	{
-   y/=9;// oblcziamy nasz najlepszy możliwy odstęp
-   }
+	  for(y = 1; y < N; y = 3 * y + 1);
+  {
+  
+  y /= 9;
+}
+
   while(y)
   {
-    for(j=n-y-1;j>=0;j--)
+    for(j = N - y - 1; j >= 0; j--)
     {
-      z=d[j];
-      i=j+y;
-      while((i<n)&&(z>d[i]))
+      z = d[j];
+      i = j + y;
+      while((i < N) && (z > d[i]))
       {
-        d[i-y]=d[i];
-        i+=y;
+        d[i - y] = d[i];
+        i += y;
       }
-      d[i-y]=z;
+      d[i - y] = z;
     }
-    y/=3;//zmniejszamy odstep
+    y /= 3;
   }
 }
 
